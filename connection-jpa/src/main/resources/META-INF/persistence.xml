@@ -3,6 +3,6 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
     version="1.0">
     <persistence-unit name="app-default" transaction-type="RESOURCE_LOCAL">
-       
+       <class>com.prokarma.app.jpa.entity.UserEntity</class>
     </persistence-unit>
 </persistence>

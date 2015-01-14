@@ -9,7 +9,7 @@
     </appender>
  
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${log_dir}/provider-console-demo.log</file>
+        <file>${log_dir}/logs/provider-console-demo.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover. Make sure the path matches the one in the file element or else
              the rollover logs are placed in the working directory. -->

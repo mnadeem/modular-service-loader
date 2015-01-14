@@ -6,4 +6,18 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>model-jpa</artifactId>
+  <dependencies>
+  	<dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+        </dependency>
+        <dependency>
+        	<groupId>com.prokarma.app</groupId>
+        	<artifactId>connection-jpa</artifactId>
+        </dependency>
+  </dependencies>
 </project>

@@ -27,6 +27,7 @@ public class ConsoleApplication {
 	private static Logger logger = LoggerFactory.getLogger(ConsoleApplication.class);
 
 	public static void main(String[] args) {
+		System.setProperty("log_dir", System.getProperty("user.home"));
 		loadConfig();
 		DefaultAppSessionFactory sessionFactory = createSessionFactory();
 		AppSession appSession = sessionFactory.create();
