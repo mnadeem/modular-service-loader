@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.prokarma.app</groupId>
+    <artifactId>modular-locator-app</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>model-mem</artifactId>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.prokarma.app</groupId>
+  		<artifactId>model-api</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.prokarma.app</groupId>
+  		<artifactId>provider-api</artifactId>
+  	</dependency>
+  </dependencies>
+</project>

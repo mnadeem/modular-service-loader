@@ -1,0 +1,17 @@
+{
+    "user": {
+        "provider": "mem"
+    },
+
+    "userSessions": {
+        "provider" : "mem"
+    },
+
+    "email": {
+        "provider": "freemarker"
+    },
+
+    "scheduled": {
+        "interval": 9
+    } 
+}
