@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.prokarma.app</groupId>
-    <artifactId>modular-locator-app</artifactId>
+    <artifactId>modular-service-loader</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>timer-api</artifactId>
