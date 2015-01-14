@@ -88,8 +88,6 @@ public class ConsoleApplication {
 
 	private static void setupScheduledTasks(final AppSessionFactory sessionFactory) {
         long interval = Config.scope("scheduled").getLong("interval", 60L) * 1000;
-        
-        logger.info("interval {}", interval);
 
         TimerProvider timer = sessionFactory.create().getProvider(TimerProvider.class);
         timer.schedule(new ScheduledTaskRunner(sessionFactory, new ScheduledTask() {

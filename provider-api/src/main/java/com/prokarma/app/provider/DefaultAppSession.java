@@ -25,7 +25,7 @@ public class DefaultAppSession implements AppSession {
 		if (provider == null) {
 			ProviderFactory<T> providerFactory = factory.getProviderFactory(clazz);
 			if (providerFactory != null) {
-				provider = providerFactory.create();
+				provider = providerFactory.create(this);
 				providers.put(hash, provider);
 			}
 		}
@@ -38,7 +38,7 @@ public class DefaultAppSession implements AppSession {
 		if (provider == null) {
 			ProviderFactory<T> providerFactory = factory.getProviderFactory(clazz, id);
 			if (providerFactory != null) {
-				provider = providerFactory.create();
+				provider = providerFactory.create(this);
 				providers.put(hash, provider);
 			}
 		}

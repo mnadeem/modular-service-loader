@@ -5,6 +5,7 @@ import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+import com.prokarma.app.provider.AppSession;
 import com.prokarma.app.provider.config.Config;
 import com.prokarma.app.timer.TimerProvider;
 import com.prokarma.app.timer.TimerProviderFactory;
@@ -16,7 +17,7 @@ public class BasicTimerProviderFactory implements TimerProviderFactory {
 
     private ConcurrentMap<String, TimerTask> scheduledTasks = new ConcurrentHashMap<String, TimerTask>();
 
-    public TimerProvider create() {
+    public TimerProvider create(AppSession session) {
         return new BasicTimerProvider(timer, this);
     }
 

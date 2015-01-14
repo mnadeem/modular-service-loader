@@ -48,6 +48,10 @@
 			<groupId>com.prokarma.app</groupId>
 			<artifactId>model-mem</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.prokarma.app</groupId>
+			<artifactId>connection-jpa</artifactId>
+		</dependency>
   </dependencies>
   
 </project>
