@@ -2,7 +2,7 @@
 
 This example demonstrate how we can utilize the following
 
-:heavy_check_mark: ServiceLoader API
+:heavy_check_mark: [ServiceLoader API](https://docs.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html)
 
 :heavy_check_mark: Factory Pattern
 
@@ -17,3 +17,7 @@ This example demonstrate how we can utilize the following
 :star2: Highly Configurable
 
 :star2: Event Based
+
+* * *
+
+Nice images are from [Emoji](http://www.emoji-cheat-sheet.com/):copyright:
