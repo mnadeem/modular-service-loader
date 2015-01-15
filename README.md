@@ -6,11 +6,13 @@ This example demonstrate how we can utilize the following
 
 :heavy_check_mark: Factory Pattern
 
+:heavy_check_mark: [Java Dynamic Proxies](http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Proxy.html)
+
 :heavy_check_mark: Json processor
 
-### To Acheive 
+### To Acheive An Appication Which Is
 
-:star2: Modular Application
+:star2: Modular
 
 :star2: Loosely Coupled
 
@@ -19,5 +21,4 @@ This example demonstrate how we can utilize the following
 :star2: Event Based
 
 * * *
-
 Nice images are from [Emoji](http://www.emoji-cheat-sheet.com/):copyright:
