@@ -14,6 +14,7 @@
 		<hibernate.entitymanager.version>4.0.1.Final</hibernate.entitymanager.version>
 		<liquibase.version>3.2.2</liquibase.version>
 		<h2.version>1.4.184</h2.version>
+		<maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -125,7 +126,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.2</version>
+					<version>${maven-compiler-plugin.version}</version>
 					<configuration>
 						<source>1.6</source>
 						<target>1.6</target>
@@ -140,7 +141,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	
 
 	<modules>
 		<module>provider-api</module>
