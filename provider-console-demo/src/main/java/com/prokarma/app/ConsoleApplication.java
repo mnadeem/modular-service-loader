@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 import com.prokarma.app.provider.AppSession;
 import com.prokarma.app.provider.AppSessionFactory;
 import com.prokarma.app.provider.DefaultAppSessionFactory;
-import com.prokarma.app.provider.Provider;
 import com.prokarma.app.provider.config.Config;
 import com.prokarma.app.provider.config.JsonConfigProvider;
 import com.prokarma.app.timer.ScheduledTask;
@@ -30,11 +29,6 @@ public class ConsoleApplication {
 		System.setProperty("log_dir", System.getProperty("user.home"));
 		loadConfig();
 		DefaultAppSessionFactory sessionFactory = createSessionFactory();
-		AppSession appSession = sessionFactory.create();
-
-		for (Provider provider : appSession.getAllProviders(TimerProvider.class)) {
-			logger.info(provider.getClass().getName());
-		}
 
 		setupScheduledTasks(sessionFactory);
 	}

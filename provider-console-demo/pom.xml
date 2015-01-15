@@ -52,6 +52,10 @@
 			<groupId>com.prokarma.app</groupId>
 			<artifactId>connection-jpa</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.prokarma.app</groupId>
+			<artifactId>model-jpa</artifactId>
+		</dependency>
   </dependencies>
   
 </project>

@@ -2,6 +2,7 @@ package com.prokarma.app.jpa;
 
 import javax.persistence.EntityManager;
 
+import com.prokarma.app.jpa.entity.UserEntity;
 import com.prokarma.app.model.UserModel;
 import com.prokarma.app.model.UserProvider;
 import com.prokarma.app.provider.AppSession;
@@ -9,36 +10,36 @@ import com.prokarma.app.provider.AppSession;
 
 public class JpaUserProvider implements UserProvider {
 
-    private static final String EMAIL = "email";
-    private static final String USERNAME = "username";
-    private static final String FIRST_NAME = "firstName";
-    private static final String LAST_NAME = "lastName";
-
-    private final AppSession session;
     protected EntityManager em;
 
     public JpaUserProvider(AppSession session, EntityManager em) {
-        this.session = session;
         this.em = em;
     }
 
 	public UserModel addUser(UserModel user) {
-		// TODO Auto-generated method stub
-		return null;
+		UserEntity entity = new UserEntity();
+		entity.setUsername(user.getUsername());
+		entity.setFirstName(user.getFirstName());
+		entity.setLastName(user.getLastName());
+		entity.setEmail(user.getEmail());
+		entity.setEnabled(user.isEnabled());
+		em.persist(entity);
+        em.flush();
+		return user;
 	}
 
 	public boolean removeUser(UserModel user) {
-		// TODO Auto-generated method stub
-		return false;
+		UserEntity userEntity = em.find(UserEntity.class, user.getUsername());
+        if (userEntity == null) return false;
+        em.remove(user);
+		return true;
 	}
 
 	public UserModel getUserByUsername(String username) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public void close() {
-		// TODO Auto-generated method stub
 		
 	}
 }

@@ -1,6 +1,6 @@
 {
     "user": {
-        "provider": "mem"
+        "provider": "jpa"
     },
 
     "userSessions": {

@@ -11,6 +11,7 @@ import com.prokarma.app.provider.config.Config;
 public class JpaUserProviderFactory implements UserProviderFactory {
 
 	public void init(Config.Scope config) {
+
 	}
 
 	public String getId() {
@@ -18,11 +19,11 @@ public class JpaUserProviderFactory implements UserProviderFactory {
 	}
 
 	public void close() {
+
 	}
 
 	public UserProvider create(AppSession session) {
 		EntityManager em = session.getProvider(JpaConnectionProvider.class).getEntityManager();
 		return new JpaUserProvider(session, em);
 	}
-
 }
