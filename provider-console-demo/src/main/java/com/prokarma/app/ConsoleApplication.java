@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.hibernate.ejb.AvailableSettings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,13 +30,12 @@ public class ConsoleApplication {
 
 	public static void main(String[] args) {
 		System.setProperty("log_dir", System.getProperty("user.home"));
-		System.setProperty("javax.persistence.provider","org.hibernate.ejb.HibernatePersistence");
+		System.setProperty(AvailableSettings.PROVIDER,"org.hibernate.ejb.HibernatePersistence");
 		loadConfig();
 		DefaultAppSessionFactory sessionFactory = createSessionFactory();
 		insertUser(sessionFactory);
 		setupScheduledTasks(sessionFactory);
 	}
-
 
 	private static DefaultAppSessionFactory createSessionFactory() {
 		DefaultAppSessionFactory factory = new DefaultAppSessionFactory();
