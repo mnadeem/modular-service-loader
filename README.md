@@ -23,7 +23,7 @@ This example demonstrate how we can utilize the following
 :star2: Event Based
 
 ### Running the example
-Just run the class in provider-console-demo module
+Just run the class in console-demo module
 
 ```
 java com.prokarma.app.Main
