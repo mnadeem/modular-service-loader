@@ -18,6 +18,8 @@ This example demonstrate how we can utilize the following
 
 :star2: Highly Configurable
 
+:star2: Highly Testable
+
 :star2: Event Based
 
 Note
