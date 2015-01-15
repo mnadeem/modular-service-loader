@@ -27,23 +27,26 @@ import com.prokarma.app.timer.TimerProvider;
 public class ConsoleApplication {
 
 	private static Logger logger = LoggerFactory.getLogger(ConsoleApplication.class);
+	private AppSessionFactory sessionFactory;
 
-	public static void main(String[] args) {
-		System.setProperty("log_dir", System.getProperty("user.home"));
-		System.setProperty(AvailableSettings.PROVIDER,"org.hibernate.ejb.HibernatePersistence");
+	public ConsoleApplication() {
+		setEnvironment();
 		loadConfig();
-		DefaultAppSessionFactory sessionFactory = createSessionFactory();
-		insertUser(sessionFactory);
-		setupScheduledTasks(sessionFactory);
+		this.sessionFactory = createSessionFactory();
 	}
 
-	private static DefaultAppSessionFactory createSessionFactory() {
+	private void setEnvironment() {
+		System.setProperty("log_dir", System.getProperty("user.home"));
+		System.setProperty(AvailableSettings.PROVIDER,"org.hibernate.ejb.HibernatePersistence");
+	}
+
+	private DefaultAppSessionFactory createSessionFactory() {
 		DefaultAppSessionFactory factory = new DefaultAppSessionFactory();
         factory.init();
         return factory;
 	}
 
-	public static void loadConfig() {
+	public void loadConfig() {
         try {
             URL configUrl = getConfig();
 
@@ -68,7 +71,7 @@ public class ConsoleApplication {
         }
     }
 
-	private static URL getConfig() throws MalformedURLException {
+	private URL getConfig() throws MalformedURLException {
 		URL config = null;
 
 		String configDir = System.getProperty("config.dir");
@@ -85,7 +88,7 @@ public class ConsoleApplication {
 		return config;
 	}
 
-	private static void insertUser(DefaultAppSessionFactory sessionFactory) {
+	public void insertUser() {
 		AppSession session = sessionFactory.create();
 
 		UserProvider userProvider = session.getProvider(UserProvider.class);
@@ -101,7 +104,7 @@ public class ConsoleApplication {
         }
 	}
 
-	private static UserModel newUser() {
+	private UserModel newUser() {
 		UserModel userModel = new com.prokarma.app.jpa.UserAdapter();
 		userModel.setUsername("mnadeem");
 		userModel.setFirstName("Mohammad");
@@ -110,8 +113,7 @@ public class ConsoleApplication {
 		return userModel;
 	}
 
-
-	private static void setupScheduledTasks(final AppSessionFactory sessionFactory) {
+	public void setupScheduledTasks() {
         long interval = Config.scope("scheduled").getLong("interval", 60L) * 1000;
 
         TimerProvider timer = sessionFactory.create().getProvider(TimerProvider.class);
@@ -121,6 +123,5 @@ public class ConsoleApplication {
 				logger.info("Task Ran");				
 			}
 		}), interval, "Sample scheduled task");
-
     }
 }
