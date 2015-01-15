@@ -16,11 +16,12 @@
     } ,
     "connectionsJpa": {
         "default": {
-            "url": "jdbc:h2:mem;AUTO_SERVER=TRUE",
+            "url": "jdbc:h2:mem:test",
             "driver": "org.h2.Driver",
             "user" : "sa",
             "password" : "sa",
-            "driverDialect" : "org.hibernate.dialect.H2Dialect"
+            "driverDialect" : "org.hibernate.dialect.H2Dialect",
+            "databaseSchema": "update"
         }
     }
 }

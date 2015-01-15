@@ -12,6 +12,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.prokarma.app.model.UserModel;
+import com.prokarma.app.model.UserProvider;
 import com.prokarma.app.provider.AppSession;
 import com.prokarma.app.provider.AppSessionFactory;
 import com.prokarma.app.provider.DefaultAppSessionFactory;
@@ -27,11 +29,13 @@ public class ConsoleApplication {
 
 	public static void main(String[] args) {
 		System.setProperty("log_dir", System.getProperty("user.home"));
+		System.setProperty("javax.persistence.provider","org.hibernate.ejb.HibernatePersistence");
 		loadConfig();
 		DefaultAppSessionFactory sessionFactory = createSessionFactory();
-
+		insertUser(sessionFactory);
 		setupScheduledTasks(sessionFactory);
 	}
+
 
 	private static DefaultAppSessionFactory createSessionFactory() {
 		DefaultAppSessionFactory factory = new DefaultAppSessionFactory();
@@ -80,6 +84,32 @@ public class ConsoleApplication {
 		}
 		return config;
 	}
+
+	private static void insertUser(DefaultAppSessionFactory sessionFactory) {
+		AppSession session = sessionFactory.create();
+
+		UserProvider userProvider = session.getProvider(UserProvider.class);
+
+        try {
+        	session.getTransaction().begin();
+        	userProvider.addUser(newUser());
+            session.getTransaction().commit();
+
+        } catch (Throwable t) {
+            session.getTransaction().rollback();
+            
+        }
+	}
+
+	private static UserModel newUser() {
+		UserModel userModel = new com.prokarma.app.jpa.UserAdapter();
+		userModel.setUsername("mnadeem");
+		userModel.setFirstName("Mohammad");
+		userModel.setLastName("Nadeem");
+		userModel.setEmail("coolmind182006@gmail.com");
+		return userModel;
+	}
+
 
 	private static void setupScheduledTasks(final AppSessionFactory sessionFactory) {
         long interval = Config.scope("scheduled").getLong("interval", 60L) * 1000;

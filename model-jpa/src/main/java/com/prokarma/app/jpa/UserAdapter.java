@@ -1,18 +1,18 @@
 package com.prokarma.app.jpa;
 
-import javax.persistence.EntityManager;
-
 import com.prokarma.app.jpa.entity.UserEntity;
 import com.prokarma.app.model.UserModel;
 
 
 public class UserAdapter implements UserModel {
 
-    protected UserEntity user;
-    protected EntityManager em;
+    private UserEntity user;
+    
+    public UserAdapter() {
+		this.user = new UserEntity();
+	}
 
-    public UserAdapter(EntityManager em, UserEntity user) {
-        this.em = em;
+    public UserAdapter(UserEntity user) {
         this.user = user;
     }
 

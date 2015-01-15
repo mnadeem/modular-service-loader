@@ -1,1 +1,2 @@
 com.prokarma.app.connection.jpa.JpaConnectionSpi
+com.prokarma.app.connection.jpa.updater.JpaUpdaterSpi
