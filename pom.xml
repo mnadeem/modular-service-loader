@@ -144,7 +144,7 @@
 
 	<modules>
 		<module>provider-api</module>
-		<module>provider-console-demo</module>
+		<module>console-demo</module>
 		<module>timer-api</module>
 		<module>timer-basic</module>
 		<module>model-api</module>
