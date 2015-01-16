@@ -22,6 +22,8 @@ This example demonstrate how we can utilize the following
 
 ### To Acheive An Appication Which Is
 
+:star2: Light Weight 
+
 :star2: Modular
 
 :star2: Loosely Coupled
