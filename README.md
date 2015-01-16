@@ -8,7 +8,7 @@ This example demonstrate how we can utilize the following
 
 :heavy_check_mark: Interface Segregation Principle = Many specific interfaces are better than a single, general interface.
 
-:heavy_check_mark: Open Closed Principle (OCP) :Classes should be open for extension, but closed for modification.
+:heavy_check_mark: Open Closed Principle (OCP) = Classes should be open for extension, but closed for modification.
 
 :heavy_check_mark: Dependency Inversion Principle =  Depend upon abstractions. Do not depend upon concrete classes.
 
