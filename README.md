@@ -14,8 +14,6 @@ This example demonstrate how we can utilize the following
 
 :heavy_check_mark: [ServiceLoader API](https://docs.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html)
 
-:heavy_check_mark: Factory Pattern
-
 :heavy_check_mark: [Java Dynamic Proxies](http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Proxy.html)
 
 :heavy_check_mark: Json processor
