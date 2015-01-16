@@ -8,6 +8,8 @@ This example demonstrate how we can utilize the following
 
 :heavy_check_mark: Dependency Inversion Principle =  Depend upon abstractions. Do not depend upon concrete classes.
 
+:heavy_check_mark: Single Responsible Principle = Classes should change for only a single reason.
+
 :heavy_check_mark: Inversion of Control : Service Locator pattern
 
 :heavy_check_mark: Simple Factory PRogramming idiom
