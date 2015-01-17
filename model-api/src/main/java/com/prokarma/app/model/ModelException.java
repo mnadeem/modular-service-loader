@@ -1,11 +1,11 @@
 package com.prokarma.app.model;
 
-/**
- * @author <a href="mailto:sthorger@redhat.com">Stian Thorgersen</a>
- */
+
 public class ModelException extends RuntimeException {
 
-    public ModelException() {
+	private static final long serialVersionUID = 1L;
+
+	public ModelException() {
     }
 
     public ModelException(String message) {

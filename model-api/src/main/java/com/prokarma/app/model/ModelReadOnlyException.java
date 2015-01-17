@@ -1,11 +1,10 @@
 package com.prokarma.app.model;
 
-/**
- * @author <a href="mailto:mposolda@redhat.com">Marek Posolda</a>
- */
 public class ModelReadOnlyException extends ModelException {
 
-    public ModelReadOnlyException() {
+	private static final long serialVersionUID = 1L;
+
+	public ModelReadOnlyException() {
     }
 
     public ModelReadOnlyException(String message) {
