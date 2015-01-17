@@ -1,4 +1,4 @@
-package com.prokarma.app.model;
+  package com.prokarma.app.model;
 
 import com.prokarma.app.provider.Provider;
 

@@ -89,6 +89,7 @@ public class ConsoleApplication {
 	}
 
 	public void insertUser() {
+		logger.info("insertUser");
 		AppSession session = sessionFactory.create();
 
 		UserProvider userProvider = session.getProvider(UserProvider.class);
