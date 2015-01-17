@@ -1,11 +1,6 @@
 package com.prokarma.app.model;
 
 public interface UserModel {
-	
-    final String USERNAME = "username";
-    final String LAST_NAME = "lastName";
-    final String FIRST_NAME = "firstName";
-    final String EMAIL = "email";
 
     String getUsername();
     void setUsername(String username);
