@@ -1,5 +1,7 @@
 # Introduction
 
+Refer [this blog](https://www.prokarma.com/blog/2015/02/03/lightweight-application-development) for more detail
+
 This example demonstrate how we can utilize the following
 
 :heavy_check_mark: Interface Segregation Principle = Many specific interfaces are better than a single, general interface.
